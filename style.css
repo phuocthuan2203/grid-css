@@ -50,7 +50,7 @@ body {
 .item-3 {
     display: grid;
     grid-area: contentt;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     column-gap: 5px;
     row-gap: 5px;
 }
@@ -77,11 +77,11 @@ body {
 }
 
 /* Khi thiết bị mình sử dụng có width <= 900px thì nó sẽ áp dụng các style bên trong @media */
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     .item-3 {
         grid-template-columns: repeat(2, 1fr);
     }
-}
+} */
 
 @media (max-width: 500px) {
     .item-3 {
@@ -97,5 +97,4 @@ body {
         "footer footer footer"
     }
 
-    /* hehe */
 }

@@ -11,6 +11,8 @@ body {
     background-color: gold;
     border: 1px solid grey;
     min-height: 50px;
+    padding: 20px;
+    font-size: 20px;
 }
 
 .container {
@@ -18,9 +20,11 @@ body {
 
     display: grid;
     height: 100vh;
+    width: 80%;
+    margin: 0 auto;
     /* fr = fraction */
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 100px 1fr 1fr 100px;
+    grid-template-rows: 100px 300px 200px 100px;
     /* set height cho các auto-row: 50px là chiều cao nhỏ nhất, nếu content của 1 item dài hơn 50px thì height của row đó sẽ = height của item */
     /* grid-auto-rows: minmax(50px, auto); */
     
@@ -28,8 +32,9 @@ body {
     grid-template-areas:
     "header header header"
     "sidebar contentt contentt"
-    "sidebar comment comment"
+    "sidebar contentt contentt"
     "footer footer footer";
+
     column-gap: 10px;
     row-gap: 10px;
 }
@@ -43,7 +48,11 @@ body {
 }
 
 .item-3 {
+    display: grid;
     grid-area: contentt;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5px;
+    row-gap: 5px;
 }
 
 .item-4 {
@@ -59,11 +68,15 @@ body {
     /* grid-row-start: 2;
     grid-row-end: 4; */
     /* grid-row: 2 / 4;; */
-    grid-area: footer;
+    /* grid-area: footer; */
 }
 
 .item-4 {
     /* grid-row: 2 / 5;; */
+    grid-area: footer;
 }
 
-/* Cách phân bổ grid item - Cách 3 Grid area */
+.article {
+    border: 5px solid rgb(255, 0, 106);
+}
+

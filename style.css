@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 20px;
+}
+
+.item {
+    background-color: gold;
+    border: 1px solid grey;
+    min-height: 50px;
+}
+
+.container {
+    /* Cách phân bổ grid item - Cách 1 */
+
+    display: grid;
+    height: 100vh;
+    /* fr = fraction */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px 1fr 1fr 100px;
+    /* set height cho các auto-row: 50px là chiều cao nhỏ nhất, nếu content của 1 item dài hơn 50px thì height của row đó sẽ = height của item */
+    /* grid-auto-rows: minmax(50px, auto); */
+    
+    /* Cách phân bổ grid item - Cách 3 Grid area */
+    grid-template-areas:
+    "header header header"
+    "sidebar contentt contentt"
+    "sidebar comment comment"
+    "footer footer footer";
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.item-1 {
+    grid-area: header;
+}
+
+.item-2 {
+    grid-area: sidebar;
+}
+
+.item-3 {
+    grid-area: contentt;
+}
+
+.item-4 {
+    grid-area: comment;
+}
+
+/* Cách phân bổ grid item - Cách 2 Grid line */
+.item-5 {
+    /* grid-column-start: 2;
+    grid-column-end: 4; */
+    /* grid-column: 2 / 4; */
+
+    /* grid-row-start: 2;
+    grid-row-end: 4; */
+    /* grid-row: 2 / 4;; */
+    grid-area: footer;
+}
+
+.item-4 {
+    /* grid-row: 2 / 5;; */
+}
+
+/* Cách phân bổ grid item - Cách 3 Grid area */

@@ -55,10 +55,6 @@ body {
     row-gap: 5px;
 }
 
-.item-4 {
-    grid-area: comment;
-}
-
 /* Cách phân bổ grid item - Cách 2 Grid line */
 .item-5 {
     /* grid-column-start: 2;
@@ -80,3 +76,24 @@ body {
     border: 5px solid rgb(255, 0, 106);
 }
 
+/* Khi thiết bị mình sử dụng có width <= 900px thì nó sẽ áp dụng các style bên trong @media */
+@media (max-width: 900px) {
+    .item-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .item-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        grid-template-areas:
+        "header header header"
+        "contentt contentt contentt"
+        "contentt contentt contentt"
+        "sidebar sidebar sidebar"
+        "footer footer footer"
+    }
+}
